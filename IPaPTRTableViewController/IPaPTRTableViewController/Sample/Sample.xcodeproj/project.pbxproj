@@ -16,7 +16,7 @@
 		6E0AA1E017F18C1D00EE5277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0AA1DE17F18C1D00EE5277 /* Main.storyboard */; };
 		6E0AA1E317F18C1D00EE5277 /* IPaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AA1E217F18C1D00EE5277 /* IPaViewController.m */; };
 		6E0AA1E517F18C1D00EE5277 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E0AA1E417F18C1D00EE5277 /* Images.xcassets */; };
-		6EB4277B17F27B950055F29E /* IPaPTRTableViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB4277A17F27B950055F29E /* IPaPTRTableViewController.framework */; };
+		6EB427BD17F283950055F29E /* IPaPTRTableViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB427BC17F283950055F29E /* IPaPTRTableViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		6E0AA1E117F18C1D00EE5277 /* IPaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPaViewController.h; sourceTree = "<group>"; };
 		6E0AA1E217F18C1D00EE5277 /* IPaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPaViewController.m; sourceTree = "<group>"; };
 		6E0AA1E417F18C1D00EE5277 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6EB4277A17F27B950055F29E /* IPaPTRTableViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IPaPTRTableViewController.framework; path = ../../Products/IPaPTRTableViewController.framework; sourceTree = "<group>"; };
+		6EB427BC17F283950055F29E /* IPaPTRTableViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IPaPTRTableViewController.framework; path = ../../Products/IPaPTRTableViewController.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 			files = (
 				6E0AA1CF17F18C1D00EE5277 /* CoreGraphics.framework in Frameworks */,
 				6E0AA1D117F18C1D00EE5277 /* UIKit.framework in Frameworks */,
-				6EB4277B17F27B950055F29E /* IPaPTRTableViewController.framework in Frameworks */,
+				6EB427BD17F283950055F29E /* IPaPTRTableViewController.framework in Frameworks */,
 				6E0AA1CD17F18C1D00EE5277 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +72,7 @@
 		6E0AA1CB17F18C1D00EE5277 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EB4277A17F27B950055F29E /* IPaPTRTableViewController.framework */,
+				6EB427BC17F283950055F29E /* IPaPTRTableViewController.framework */,
 				6E0AA1CC17F18C1D00EE5277 /* Foundation.framework */,
 				6E0AA1CE17F18C1D00EE5277 /* CoreGraphics.framework */,
 				6E0AA1D017F18C1D00EE5277 /* UIKit.framework */,

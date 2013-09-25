@@ -75,3 +75,13 @@ base on IPaListScrollView
 
 will upgrade to UICollectionView in the future….
 
+
+
+IPaPageControlTableViewController
+==========
+UITableViewController that manage your data with page
+the lowest cell will be loading cell
+when it shows up, IPaPageControlTableViewController will call
+-(void)loadDataWithPage:(NSUInteger)page callback:(void (^)(NSArray*,NSUInteger))callback;
+to download  next page,make sure you do callback in this function
+

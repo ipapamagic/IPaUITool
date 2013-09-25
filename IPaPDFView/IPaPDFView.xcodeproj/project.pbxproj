@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EB4279E17F27FAF0055F29E /* IPaListScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB4279D17F27FAF0055F29E /* IPaListScrollView.framework */; };
+		6EB427BF17F283AD0055F29E /* IPaListScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB427BE17F283AD0055F29E /* IPaListScrollView.framework */; };
 		6ED2669915620B8B007ABA45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED2669815620B8B007ABA45 /* Foundation.framework */; };
 		6ED266A915620BA5007ABA45 /* IPaPDFView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ED266A515620BA5007ABA45 /* IPaPDFView.h */; };
 		6ED266AA15620BA5007ABA45 /* IPaPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED266A615620BA5007ABA45 /* IPaPDFView.m */; };
@@ -51,7 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6EB4279D17F27FAF0055F29E /* IPaListScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IPaListScrollView.framework; path = ../IPaListScrollView/Products/IPaListScrollView.framework; sourceTree = "<group>"; };
+		6EB427BE17F283AD0055F29E /* IPaListScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IPaListScrollView.framework; path = ../IPaListScrollView/Products/IPaListScrollView.framework; sourceTree = "<group>"; };
 		6ED2669515620B8B007ABA45 /* libIPaPDFView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIPaPDFView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED2669815620B8B007ABA45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6ED2669C15620B8B007ABA45 /* IPaPDFView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPaPDFView-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EB4279E17F27FAF0055F29E /* IPaListScrollView.framework in Frameworks */,
+				6EB427BF17F283AD0055F29E /* IPaListScrollView.framework in Frameworks */,
 				6ED266F815620C96007ABA45 /* UIKit.framework in Frameworks */,
 				6ED2669915620B8B007ABA45 /* Foundation.framework in Frameworks */,
 			);
@@ -130,7 +130,7 @@
 		6ED2669715620B8B007ABA45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EB4279D17F27FAF0055F29E /* IPaListScrollView.framework */,
+				6EB427BE17F283AD0055F29E /* IPaListScrollView.framework */,
 				6ED266F715620C96007ABA45 /* UIKit.framework */,
 				6ED2669815620B8B007ABA45 /* Foundation.framework */,
 			);
