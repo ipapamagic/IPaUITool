@@ -14,8 +14,8 @@
 }
 -(id)dataWithIndex:(NSUInteger)index;
 #pragma mark - should be overwrite
--(UITableViewCell*)createLoadingCell;
--(UITableViewCell*)createDataCell;
+-(UITableViewCell*)createLoadingCellWithIndex:(NSIndexPath*)indexPath;
+-(UITableViewCell*)createDataCellWithIndex:(NSIndexPath*)indexPath;
 -(void)loadDataWithPage:(NSUInteger)page callback:(void (^)(NSArray*,NSUInteger))callback;
 -(void)configureCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath withData:(id)data;
 @end

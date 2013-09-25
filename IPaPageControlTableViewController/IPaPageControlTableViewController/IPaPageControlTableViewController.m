@@ -53,14 +53,14 @@
     return datas[index];
 }
 
--(UITableViewCell*)createLoadingCell
+-(UITableViewCell*)createLoadingCellWithIndex:(NSIndexPath*)indexPath
 {
     NSAssert(NO, @"createLoadingCell need to be overwrited");
     return nil;
 }
--(UITableViewCell*)createDataCell
+-(UITableViewCell*)createDataCellWithIndex:(NSIndexPath*)indexPath
 {
-    NSAssert(NO, @"createDataCell need to be overwrited");
+    NSAssert(NO, @"createDataCellWithIndex need to be overwrited");
     return nil;
 }
 
@@ -93,11 +93,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == datas.count) {
-        return [self createLoadingCell];
+        return [self createLoadingCellWithIndex:indexPath];
     }
     
     else {
-        return [self createDataCell];
+        return [self createDataCellWithIndex:indexPath];
     }
     return nil;
 }
