@@ -37,7 +37,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    totalPageNum = 0;
+    totalPageNum = 1;
     currentPage = 0;
     currentLoadingPage = -1;
     datas = [@[] mutableCopy];
@@ -71,6 +71,11 @@
 -(void)configureCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath withData:(id)data
 {
     NSAssert(NO, @"configureCell:withIndexPath:withData: need to be overwrited");
+}
+
+-(BOOL)isLoadingCell:(NSIndexPath*)indexPath
+{
+    return (indexPath.row == datas.count);
 }
 #pragma mark - Table view data source
 
