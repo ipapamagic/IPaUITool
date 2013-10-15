@@ -18,5 +18,6 @@
 -(UITableViewCell*)createDataCellWithIndex:(NSIndexPath*)indexPath;
 -(void)loadDataWithPage:(NSUInteger)page callback:(void (^)(NSArray*,NSUInteger))callback;
 -(void)configureCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath withData:(id)data;
+-(void)reloadAllData;
 -(BOOL)isLoadingCell:(NSIndexPath*)indexPath;
 @end

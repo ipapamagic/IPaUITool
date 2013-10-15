@@ -52,7 +52,14 @@
 {
     return datas[index];
 }
-
+-(void)reloadAllData
+{
+    totalPageNum = 1;
+    currentPage = 0;
+    currentLoadingPage = -1;
+    datas = [@[] mutableCopy];
+    [self.tableView reloadData];
+}
 -(UITableViewCell*)createLoadingCellWithIndex:(NSIndexPath*)indexPath
 {
     NSAssert(NO, @"createLoadingCell need to be overwrited");
@@ -124,7 +131,7 @@
                 [datas addObjectsFromArray:newDatas];
                 [self.tableView beginUpdates];
                 if (currentPage == totalPageNum) {
-                    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:startRow inSection:1]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:startRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
                 }
                 
                 [self.tableView insertRowsAtIndexPaths:indexList withRowAnimation:UITableViewRowAnimationAutomatic];
