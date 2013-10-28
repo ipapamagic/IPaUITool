@@ -79,7 +79,10 @@
 {
     NSAssert(NO, @"configureCell:withIndexPath:withData: need to be overwrited");
 }
-
+-(void)configureLoadingCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath
+{
+    
+}
 -(BOOL)isLoadingCell:(NSIndexPath*)indexPath
 {
     return (indexPath.row == datas.count);
@@ -139,15 +142,9 @@
                 
                 [self.tableView endUpdates];
             }];
-            
-            
-         
-                
-                
-                
-                
-            
+
         }
+        [self configureLoadingCell:cell withIndexPath:indexPath];
     }
     else {
         [self configureCell:cell withIndexPath:indexPath withData:datas[indexPath.row]];
