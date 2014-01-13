@@ -43,7 +43,7 @@
     }
     
     textChangedObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextViewTextDidChangeNotification object:self queue:nil usingBlock:^(NSNotification* noti){
-        [placeholderLabel setHidden:([[self text] length] <= 0)];
+        [placeholderLabel setHidden:([[self text] length] > 0)];
     }];
     
 }
@@ -58,11 +58,8 @@
 
 - (void)setPlaceholder:(NSString *)newplaceholder
 {
-    if( [[self placeholder] length] > 0 )
-    {
-        placeholderLabel.text = newplaceholder;
-        [placeholderLabel sizeToFit];
-    }
+    placeholderLabel.text = newplaceholder;
+    [placeholderLabel sizeToFit];
 }
 -(void)setPlaceholderColor:(UIColor *)placeholderColor
 {
