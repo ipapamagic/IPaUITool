@@ -826,7 +826,7 @@ enum {
                                                      CGAffineTransformMakeTranslation(itemIndex%ColumnItemNum * actualItemDisW + offsetX,startPos + offsetY));
         [item setCenter:center];
         [itemData removeObjectAtIndex:currentItem];
-        [itemData insertObject:[NSNumber numberWithInt:itemIndex] atIndex:currentItem];
+        [itemData insertObject:[NSNumber numberWithInteger:itemIndex] atIndex:currentItem];
         if (itemIndex < allItemsNum) {
             [self.controlDelegate configureIPaListScrollView:self withItem:item withIdx:itemIndex];
         }
