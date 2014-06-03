@@ -37,28 +37,17 @@ static NSMutableArray *alertViewList;
 }
 
 
-+(id)IPaAlertViewWithTitle:(NSString*)title message:(NSString*)message 
++(id)IPaAlertViewWithTitle:(NSString*)title message:(NSString*)message
                   callback:(void (^)(NSInteger))callback
-         cancelButtonTitles:(NSString*)cancelButtonTitle ,...
+        cancelButtonTitles:(NSString*)cancelButtonTitle ,...
 
 {
-    IPaAlertView* newView = [[IPaAlertView alloc] initWithTitle:title message:message callback:callback
-                                              cancelButtonTitles:cancelButtonTitle,nil];
-    
-    
- 
-    id current = cancelButtonTitle;
     va_list argumentList;
     va_start(argumentList, cancelButtonTitle);
-    current = va_arg(argumentList, id);
-    while (current != nil) {
-        [newView addButtonWithTitle:current];
-        current = va_arg(argumentList, id);
-        //[array addObject:current];
-    }
+    IPaAlertView* newView = [[IPaAlertView alloc] initWithTitle:title message:message callback:callback cancelButtonTitle:cancelButtonTitle argumentList:argumentList];
     va_end(argumentList);
     
-
+    
     [newView show];
     return newView;
     
@@ -73,52 +62,51 @@ static NSMutableArray *alertViewList;
     
 }
 -(id) initWithTitle:(NSString*)title message:(NSString*)message
-        cancelButtonTitles:(NSString*)cancelButtonTitle ,...
+ cancelButtonTitles:(NSString*)cancelButtonTitle ,...
 
 {
-    self = [self initWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
-
-    id current = cancelButtonTitle;
     va_list argumentList;
     va_start(argumentList, cancelButtonTitle);
-    current = va_arg(argumentList, id);
-    while (current != nil) {
-        [self addButtonWithTitle:current];
-        current = va_arg(argumentList, id);
-        //[array addObject:current];
-    }
+    self = [self initWithTitle:title message:message callback:nil cancelButtonTitle:cancelButtonTitle argumentList:argumentList];
     va_end(argumentList);
     
     return self;
 }
 
--(id) initWithTitle:(NSString*)title message:(NSString*)message 
+-(id) initWithTitle:(NSString*)title message:(NSString*)message
            callback:(void (^)(NSInteger))callback
-  cancelButtonTitles:(NSString*)cancelButtonTitle ,...
+ cancelButtonTitles:(NSString*)cancelButtonTitle ,...
 
 {
-    self = [self initWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
-
-    id current = cancelButtonTitle;
     va_list argumentList;
     va_start(argumentList, cancelButtonTitle);
-    current = va_arg(argumentList, id);
+    self = [self initWithTitle:title message:message callback:callback cancelButtonTitle:cancelButtonTitle argumentList:argumentList];
+    va_end(argumentList);
+    return self;
+}
+
+-(id) initWithTitle:(NSString*)title message:(NSString*)message
+           callback:(void (^)(NSInteger))callback cancelButtonTitle:(NSString*)cancelButtonTitle
+       argumentList:(va_list)argumentList
+{
+    
+    self = [self initWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
+    id current = va_arg(argumentList, id);
     while (current != nil) {
         [self addButtonWithTitle:current];
         current = va_arg(argumentList, id);
         //[array addObject:current];
     }
-    va_end(argumentList);
     self.Callback = callback;
-
+    
     return self;
+    
 }
-
 -(void)show
 {
     self.delegate = self;
     [super show];
-//return self or arc may release this object
+    //return self or arc may release this object
     [IPaAlertView RetainAlertView:self];
     
 }
@@ -127,7 +115,7 @@ static NSMutableArray *alertViewList;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (self.Callback != nil) {
-    
+        
         self.Callback(buttonIndex);
         
     }

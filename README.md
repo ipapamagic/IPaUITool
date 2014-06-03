@@ -89,5 +89,10 @@ IPaPlaceholderTextView
 ==========
 textView that has placeholder feature
 
-
+IPaImagePreviewView
+==========
+IPaImagePreviewView is inherit by UIScrollView
+is a simple image previewer that can zoom py pinch gesture
+it work with autolayout
+you need to set maximun zoom scale to work
 
