@@ -60,7 +60,7 @@
     // Drawing code
 }
 */
--(void)refreshConstraint
+-(void)refreshConstraintWithScale:(CGFloat)scale
 {
     CGFloat imageWidth = previewImgView.image.size.width;
     CGFloat imageHeight = previewImgView.image.size.height;
@@ -75,29 +75,27 @@
     CGFloat imageViewWidth;
     CGFloat imageViewHeight;
     if (ratio >= viewRatio) {
-        imageViewWidth = viewWidth;
+        imageViewWidth = viewWidth * scale;
         imageViewHeight = viewWidth / ratio;
         imgViewLeftConstraint.constant = 0;
-        imgViewTopConstraint.constant = (viewHeight - imageViewHeight) * .5;
+        imgViewTopConstraint.constant = (imageViewHeight > viewHeight)?:(viewHeight - imageViewHeight) * .5;
         
     }
     else {
-        imageViewHeight = viewHeight;
+        imageViewHeight = viewHeight * scale;
         imageViewWidth = viewHeight * ratio;
         imgViewTopConstraint.constant = 0;
-        imgViewLeftConstraint.constant = (viewWidth - imageViewWidth) * .5;
+        imgViewLeftConstraint.constant = (imageViewWidth > viewWidth)?0:(viewWidth - imageViewWidth) * .5;
     }
-    if (self.zoomScale > 1) {
-        imgViewTopConstraint.constant = 0;
-        imgViewLeftConstraint.constant = 0;
-    }
-    imgViewWidthConstraint.constant = imageViewWidth;
-    imgViewHeightConstraint.constant = imageViewHeight;
+
+    imgViewWidthConstraint.constant = imageViewWidth / scale;
+    imgViewHeightConstraint.constant = imageViewHeight / scale;
+
 }
 -(void)setImage:(UIImage *)image
 {
     [previewImgView setImage:image];
-    [self refreshConstraint];
+    [self refreshConstraintWithScale:self.zoomScale];
     [self layoutIfNeeded];
     
 }
@@ -113,7 +111,7 @@
 }
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-    [self refreshConstraint];
+    [self refreshConstraintWithScale:scale];
     [UIView animateWithDuration:0.3 animations:^(){
         [self layoutIfNeeded];
     }];
