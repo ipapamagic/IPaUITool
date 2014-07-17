@@ -50,7 +50,7 @@
 }
 -(id)dataWithIndex:(NSUInteger)index
 {
-    return datas[index];
+    return (index < [datas count])?datas[index]:nil;
 }
 -(void)reloadAllData
 {
