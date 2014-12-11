@@ -7,10 +7,12 @@
 //
 
 #import "IPaPlaceholderTextView.h"
-
+@interface IPaPlaceholderTextView ()
+@property (nonatomic,strong) UILabel *placeholderLabel;
+@end
 @implementation IPaPlaceholderTextView
 {
-    UILabel *placeholderLabel;
+
     id textChangedObserver;
 }
 - (id)initWithFrame:(CGRect)frame
@@ -18,55 +20,47 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self initialPlaceholder];
+        [self placeholderLabel];
     }
     return self;
 }
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self initialPlaceholder];
+    [self placeholderLabel];
 }
--(void)initialPlaceholder
+- (UILabel*)placeholderLabel
 {
-    [self setPlaceholder:@""];
-    [self setPlaceholderColor:[UIColor lightGrayColor]];
-    if ( placeholderLabel == nil )
-    {
-        placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(8,8,self.bounds.size.width - 16,0)];
-        placeholderLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        placeholderLabel.numberOfLines = 0;
-        placeholderLabel.font = self.font;
-        placeholderLabel.backgroundColor = [UIColor clearColor];
-        placeholderLabel.textColor = [UIColor lightGrayColor];
-        [self addSubview:placeholderLabel];
+    if (_placeholderLabel == nil) {
+        _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(8,8,self.bounds.size.width - 16,0)];
+        _placeholderLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _placeholderLabel.numberOfLines = 0;
+        _placeholderLabel.font = self.font;
+        _placeholderLabel.backgroundColor = [UIColor clearColor];
+        _placeholderLabel.textColor = [UIColor darkGrayColor];
+        [self addSubview:_placeholderLabel];
+        textChangedObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextViewTextDidChangeNotification object:self queue:nil usingBlock:^(NSNotification* noti){
+            [_placeholderLabel setHidden:([[self text] length] > 0)];
+        }];
     }
-    
-    textChangedObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextViewTextDidChangeNotification object:self queue:nil usingBlock:^(NSNotification* noti){
-        [placeholderLabel setHidden:([[self text] length] > 0)];
-    }];
-    
+    return _placeholderLabel;
 }
+
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:textChangedObserver];
 }
--(NSString*)placeholder
-{
-    return placeholderLabel.text;
-}
 
-- (void)setPlaceholder:(NSString *)newplaceholder
+- (void)setPlaceholder:(NSString *)placeholder
 {
-    placeholderLabel.text = newplaceholder;
-    [placeholderLabel sizeToFit];
+    _placeholder = placeholder;
+    self.placeholderLabel.text = placeholder;
+    [self.placeholderLabel sizeToFit];
 }
 -(void)setPlaceholderColor:(UIColor *)placeholderColor
 {
-    [placeholderLabel setTextColor:placeholderColor];
+    _placeholderColor = placeholderColor;
+    [self.placeholderLabel setTextColor:placeholderColor];
 }
--(UIColor*)placeholderColor
-{
-    return [placeholderLabel textColor];
-}
+
 @end

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+IB_DESIGNABLE
 @interface IPaPlaceholderTextView : UITextView
-@property (nonatomic) NSString *placeholder;
-@property (nonatomic) UIColor *placeholderColor;
+@property (nonatomic,copy) IBInspectable NSString *placeholder;
+@property (nonatomic,strong) IBInspectable UIColor *placeholderColor;
 @end
