@@ -62,5 +62,16 @@
     _placeholderColor = placeholderColor;
     [self.placeholderLabel setTextColor:placeholderColor];
 }
-
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    [_placeholderLabel setHidden:([[self text] length] > 0)];
+    
+}
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    [self.placeholderLabel setFont:font];
+    [self.placeholderLabel sizeToFit];
+}
 @end
