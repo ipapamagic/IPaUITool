@@ -25,4 +25,9 @@
     self.imageEdgeInsets = UIEdgeInsetsMake(
                                               - (titleSize.height + space), 0.0, 0.0, - titleSize.width);
 }
+- (void)imageAlignRightWithSpace:(CGFloat)space
+{
+    self.titleEdgeInsets = UIEdgeInsetsMake(0, -self.imageView.frame.size.width - space, 0, self.imageView.frame.size.width);
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, self.titleLabel.frame.size.width + space, 0, -self.titleLabel.frame.size.width);
+}
 @end

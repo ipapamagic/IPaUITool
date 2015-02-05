@@ -10,4 +10,5 @@
 
 @interface UIButton (IPaUITool)
 - (void)centerImageUpTitleDownWithSpace:(CGFloat)space;
+- (void)imageAlignRightWithSpace:(CGFloat)space;
 @end
