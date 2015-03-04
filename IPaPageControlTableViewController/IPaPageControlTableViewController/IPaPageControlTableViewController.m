@@ -7,17 +7,15 @@
 //
 
 #import "IPaPageControlTableViewController.h"
-
-@interface IPaPageControlTableViewController ()
+#import "IPaTableViewPageController.h"
+@interface IPaPageControlTableViewController () <IPaTableViewPageControllerDelegate>
 
 @end
 
 @implementation IPaPageControlTableViewController
 {
-    NSInteger totalPageNum;
-    NSInteger currentPage;
-    NSInteger currentLoadingPage;
-    NSMutableArray *datas;
+    IPaTableViewPageController *pageController;
+
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,10 +35,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    totalPageNum = 1;
-    currentPage = 0;
-    currentLoadingPage = -1;
-    datas = [@[] mutableCopy];
+    pageController = [[IPaTableViewPageController alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,15 +45,16 @@
 }
 -(id)dataWithIndex:(NSUInteger)index
 {
-    return (index < [datas count])?datas[index]:nil;
+    return [pageController dataWithIndex:index];
+
 }
 -(void)reloadAllData
 {
-    totalPageNum = 1;
-    currentPage = 0;
-    currentLoadingPage = -1;
-    datas = [@[] mutableCopy];
-    [self.tableView reloadData];
+    [pageController reloadAllData];
+}
+- (UITableView*)tableViewForPageController:(IPaTableViewPageController*)pageController
+{
+    return self.tableView;
 }
 -(UITableViewCell*)createLoadingCellWithIndex:(NSIndexPath*)indexPath
 {
@@ -85,7 +81,7 @@
 }
 -(BOOL)isLoadingCell:(NSIndexPath*)indexPath
 {
-    return (indexPath.row == datas.count);
+    return [pageController isLoadingCell:indexPath];
 }
 #pragma mark - Table view data source
 

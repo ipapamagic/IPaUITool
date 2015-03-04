@@ -21,12 +21,16 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		6E3AFB421AA60F4B009E374E /* IPaTableViewPageController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E3AFB401AA60F4B009E374E /* IPaTableViewPageController.h */; };
+		6E3AFB431AA60F4B009E374E /* IPaTableViewPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AFB411AA60F4B009E374E /* IPaTableViewPageController.m */; };
 		6EB427B217F283080055F29E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB427B017F283080055F29E /* InfoPlist.strings */; };
 		6EB427C217F283DB0055F29E /* IPaPageControlTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB427C017F283DB0055F29E /* IPaPageControlTableViewController.h */; };
 		6EB427C317F283DB0055F29E /* IPaPageControlTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB427C117F283DB0055F29E /* IPaPageControlTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E3AFB401AA60F4B009E374E /* IPaTableViewPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPaTableViewPageController.h; sourceTree = "<group>"; };
+		6E3AFB411AA60F4B009E374E /* IPaTableViewPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPaTableViewPageController.m; sourceTree = "<group>"; };
 		6EB427A917F283080055F29E /* IPaPageControlTableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPaPageControlTableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB427AF17F283080055F29E /* IPaPageControlTableViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IPaPageControlTableViewController-Info.plist"; sourceTree = "<group>"; };
 		6EB427B117F283080055F29E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			children = (
 				6EB427C017F283DB0055F29E /* IPaPageControlTableViewController.h */,
 				6EB427C117F283DB0055F29E /* IPaPageControlTableViewController.m */,
+				6E3AFB401AA60F4B009E374E /* IPaTableViewPageController.h */,
+				6E3AFB411AA60F4B009E374E /* IPaTableViewPageController.m */,
 				6EB427AE17F283080055F29E /* Supporting Files */,
 			);
 			path = IPaPageControlTableViewController;
@@ -89,6 +95,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3AFB421AA60F4B009E374E /* IPaTableViewPageController.h in Headers */,
 				6EB427C217F283DB0055F29E /* IPaPageControlTableViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB427C317F283DB0055F29E /* IPaPageControlTableViewController.m in Sources */,
+				6E3AFB431AA60F4B009E374E /* IPaTableViewPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +340,7 @@
 				6EB427B817F283080055F29E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EB427B917F283080055F29E /* Build configuration list for PBXAggregateTarget "IPaPageControlTableViewControllerUniversalFramework" */ = {
 			isa = XCConfigurationList;
@@ -340,6 +349,7 @@
 				6EB427BB17F283080055F29E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
