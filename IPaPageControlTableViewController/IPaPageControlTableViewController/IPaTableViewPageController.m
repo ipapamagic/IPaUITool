@@ -7,7 +7,7 @@
 //
 
 #import "IPaTableViewPageController.h"
-@interface IPaTableViewPageController() <UITableViewDataSource,UITableViewDelegate>
+@interface IPaTableViewPageController() <UITableViewDataSource>
 @end
 @implementation IPaTableViewPageController
 {
@@ -62,18 +62,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell;
     if (indexPath.row == datas.count) {
-        return [self.delegate pageController:self createLoadingCellWithIndex:indexPath];
-    }
-    
-    else {
-        return [self.delegate pageController:self createDataCellWithIndex:indexPath];
-    }
-    return nil;
-}
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == datas.count) {
+        cell = [self.delegate pageController:self createLoadingCellWithIndex:indexPath];
         if (currentLoadingPage != currentPage + 1) {
             currentLoadingPage = currentPage + 1;
             
@@ -102,8 +93,11 @@
         }
         [self.delegate pageController:self configureLoadingCell:cell withIndexPath:indexPath];
     }
+    
     else {
+        cell = [self.delegate pageController:self createDataCellWithIndex:indexPath];
         [self.delegate pageController:self configureCell:cell withIndexPath:indexPath withData:datas[indexPath.row]];
     }
+    return cell;
 }
 @end
