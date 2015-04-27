@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 @protocol IPaTableViewPageControllerDelegate;
-@interface IPaTableViewPageController : NSObject
+@interface IPaTableViewPageController : NSObject <UITableViewDataSource>
 -(id)dataWithIndex:(NSUInteger)index;
 -(void)reloadAllData;
 -(BOOL)isLoadingCell:(NSIndexPath*)indexPath;

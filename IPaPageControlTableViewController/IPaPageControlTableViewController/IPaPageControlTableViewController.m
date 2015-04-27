@@ -36,6 +36,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     pageController = [[IPaTableViewPageController alloc] init];
+    pageController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,10 +53,7 @@
 {
     [pageController reloadAllData];
 }
-- (UITableView*)tableViewForPageController:(IPaTableViewPageController*)pageController
-{
-    return self.tableView;
-}
+
 -(UITableViewCell*)createLoadingCellWithIndex:(NSIndexPath*)indexPath
 {
     NSAssert(NO, @"createLoadingCell need to be overwrited");
@@ -88,113 +86,48 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [pageController numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    if (currentPage == totalPageNum) {
-        return datas.count;
-    }
-    return datas.count + 1;
+    return [pageController tableView:tableView numberOfRowsInSection:section];
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == datas.count) {
-        return [self createLoadingCellWithIndex:indexPath];
-    }
-    
-    else {
-        return [self createDataCellWithIndex:indexPath];
-    }
-    return nil;
+    return [pageController tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == datas.count) {
-        if (currentLoadingPage != currentPage + 1) {
-            currentLoadingPage = currentPage + 1;
-            
-            [self loadDataWithPage:currentLoadingPage callback:^(NSArray* newDatas,NSUInteger totalPage){
-                totalPageNum = totalPage;
-                currentPage = currentLoadingPage;
-                currentLoadingPage = -1;
-                NSMutableArray *indexList = [@[] mutableCopy];
-                NSUInteger startRow = datas.count;
-                for (NSInteger idx = 0; idx < newDatas.count; idx++) {
-                    [indexList addObject:[NSIndexPath indexPathForRow:startRow + idx inSection:0]];
-                }
-                [datas addObjectsFromArray:newDatas];
-                [self.tableView beginUpdates];
-                if (currentPage == totalPageNum) {
-                    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:startRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                
-                [self.tableView insertRowsAtIndexPaths:indexList withRowAnimation:UITableViewRowAnimationAutomatic];
-                
-                
-                [self.tableView endUpdates];
-            }];
-
-        }
-        [self configureLoadingCell:cell withIndexPath:indexPath];
-    }
-    else {
-        [self configureCell:cell withIndexPath:indexPath withData:datas[indexPath.row]];
-    }
+    
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - IPaTableViewPageControllerDelegate
+
+- (UITableView*)tableViewForPageController:(IPaTableViewPageController*)pageController
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return self.tableView;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)pageController:(IPaTableViewPageController*)pageController createLoadingCellWithIndex:(NSIndexPath*)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    return [self createLoadingCellWithIndex:indexPath];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+-(UITableViewCell*)pageController:(IPaTableViewPageController*)pageController createDataCellWithIndex:(NSIndexPath*)indexPath
 {
+    return [self createDataCellWithIndex:indexPath];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)pageController:(IPaTableViewPageController*)pageController  loadDataWithPage:(NSUInteger)page callback:(void (^)(NSArray*,NSUInteger))callback
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    [self loadDataWithPage:page callback:callback];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)pageController:(IPaTableViewPageController*)pageController  configureCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath withData:(id)data
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return [self configureCell:cell withIndexPath:indexPath withData:data];
 }
 
- */
-
+-(void)pageController:(IPaTableViewPageController*)pageController  configureLoadingCell:(UITableViewCell*)cell withIndexPath:(NSIndexPath*)indexPath
+{
+    return [self configureLoadingCell:cell withIndexPath:indexPath];
+}
 @end

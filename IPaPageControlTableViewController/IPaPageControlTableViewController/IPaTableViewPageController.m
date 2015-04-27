@@ -7,7 +7,7 @@
 //
 
 #import "IPaTableViewPageController.h"
-@interface IPaTableViewPageController() <UITableViewDataSource>
+@interface IPaTableViewPageController() 
 @end
 @implementation IPaTableViewPageController
 {
@@ -63,7 +63,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    if (indexPath.row == datas.count) {
+    if ([self isLoadingCell:indexPath]) {
         cell = [self.delegate pageController:self createLoadingCellWithIndex:indexPath];
         if (currentLoadingPage != currentPage + 1) {
             currentLoadingPage = currentPage + 1;
@@ -100,4 +100,5 @@
     }
     return cell;
 }
+
 @end
