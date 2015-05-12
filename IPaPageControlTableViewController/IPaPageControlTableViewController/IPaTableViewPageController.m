@@ -79,15 +79,19 @@
                 }
                 [datas addObjectsFromArray:newDatas];
                 UITableView *tableView = [self.delegate tableViewForPageController:self];
-                [tableView beginUpdates];
-                if (currentPage == totalPageNum) {
-                    [tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:startRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                
-                [tableView insertRowsAtIndexPaths:indexList withRowAnimation:UITableViewRowAnimationAutomatic];
-                
-                
-                [tableView endUpdates];
+//                [tableView reloadData];
+                dispatch_async(dispatch_get_main_queue(), ^(){
+                    [tableView beginUpdates];
+                    if (currentPage == totalPageNum) {
+                        [tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:startRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    if ([indexList count] > 0) {
+                        [tableView insertRowsAtIndexPaths:indexList withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    
+                    [tableView endUpdates];
+                });
+
             }];
             
         }
