@@ -11,12 +11,12 @@
 @end
 @implementation IPaTextFieldTableViewCell
 {
-    __weak IBOutlet UITextField *textField;
+
 }
 - (void)awakeFromNib {
     // Initialization code
     [super awakeFromNib];
-    textField.delegate = self;
+    self.textField.delegate = self;
 }
 - (void)dealloc
 {
@@ -29,9 +29,9 @@
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)_textField
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [_textField resignFirstResponder];
+    [self.textField resignFirstResponder];
     return YES;
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -39,9 +39,9 @@
     
     return [self.delegate onIPaTextFieldTableViewCell:self shouldChangeCharactersInRange:range replacementString:(NSString *)string];
 }
-- (void)textFieldDidEndEditing:(UITextField *)_textField
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [self.delegate onIPaTextFieldTableViewCellValueChanged:self value:_textField.text];
+    [self.delegate onIPaTextFieldTableViewCellValueChanged:self value:self.textField.text];
 }
 
 @end

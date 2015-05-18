@@ -12,8 +12,9 @@
 
 @protocol IPaTextFieldTableViewCellDelegate;
 @interface IPaTextFieldTableViewCell : UITableViewCell
-@property (nonatomic,copy) NSString *identifer;
+@property (nonatomic,strong) id identifer;
 @property (nonatomic,weak) IBOutlet id <IPaTextFieldTableViewCellDelegate> delegate;
+@property (nonatomic,weak) IBOutlet UITextField *textField;
 @end
 @protocol IPaTextFieldTableViewCellDelegate <NSObject>
 
