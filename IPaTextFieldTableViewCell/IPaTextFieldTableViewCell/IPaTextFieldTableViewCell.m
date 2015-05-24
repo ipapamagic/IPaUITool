@@ -23,7 +23,9 @@
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+    if (selected) {
+        [self.textField becomeFirstResponder];
+    }
     // Configure the view for the selected state
 }
 
