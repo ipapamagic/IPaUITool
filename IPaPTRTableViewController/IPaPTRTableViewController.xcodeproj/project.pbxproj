@@ -24,6 +24,8 @@
 		6E0AA15417F18B4F00EE5277 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E0AA15217F18B4F00EE5277 /* InfoPlist.strings */; };
 		6E0AA16017F18B5B00EE5277 /* IPaPTRTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E0AA15E17F18B5B00EE5277 /* IPaPTRTableViewController.h */; };
 		6E0AA16117F18B5B00EE5277 /* IPaPTRTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AA15F17F18B5B00EE5277 /* IPaPTRTableViewController.m */; };
+		6E2626111B18C7360079776B /* IPaPTRTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E26260F1B18C7360079776B /* IPaPTRTableController.h */; };
+		6E2626121B18C7360079776B /* IPaPTRTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2626101B18C7360079776B /* IPaPTRTableController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6E0AA15E17F18B5B00EE5277 /* IPaPTRTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPaPTRTableViewController.h; sourceTree = "<group>"; };
 		6E0AA15F17F18B5B00EE5277 /* IPaPTRTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPaPTRTableViewController.m; sourceTree = "<group>"; };
 		6E0AA20117F18C1D00EE5277 /* Sample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sample.xcodeproj; path = Sample/Sample.xcodeproj; sourceTree = "<group>"; };
+		6E26260F1B18C7360079776B /* IPaPTRTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPaPTRTableController.h; sourceTree = "<group>"; };
+		6E2626101B18C7360079776B /* IPaPTRTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPaPTRTableController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			children = (
 				6E0AA15E17F18B5B00EE5277 /* IPaPTRTableViewController.h */,
 				6E0AA15F17F18B5B00EE5277 /* IPaPTRTableViewController.m */,
+				6E26260F1B18C7360079776B /* IPaPTRTableController.h */,
+				6E2626101B18C7360079776B /* IPaPTRTableController.m */,
 				6E0AA15017F18B4F00EE5277 /* Supporting Files */,
 				6E0AA20117F18C1D00EE5277 /* Sample.xcodeproj */,
 			);
@@ -110,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0AA16017F18B5B00EE5277 /* IPaPTRTableViewController.h in Headers */,
+				6E2626111B18C7360079776B /* IPaPTRTableController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2626121B18C7360079776B /* IPaPTRTableController.m in Sources */,
 				6E0AA16117F18B5B00EE5277 /* IPaPTRTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
