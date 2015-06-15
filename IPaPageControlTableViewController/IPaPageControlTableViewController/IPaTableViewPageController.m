@@ -90,6 +90,9 @@
                     }
                     
                     [tableView endUpdates];
+                    if (currentPage != totalPageNum) {
+                        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:datas.count inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
                 });
 
             }];
