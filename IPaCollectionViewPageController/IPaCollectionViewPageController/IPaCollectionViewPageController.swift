@@ -30,7 +30,7 @@ public class IPaCollectionViewPageController:NSObject,UICollectionViewDataSource
         totalPageNum = 1
         currentPage = 0
         currentLoadingPage = -1
-
+        datas.removeAll(keepCapacity: true)
     }
     public func isLoadingCell(indexPath:NSIndexPath) -> Bool {
         return Bool(indexPath.item == datas.count)
