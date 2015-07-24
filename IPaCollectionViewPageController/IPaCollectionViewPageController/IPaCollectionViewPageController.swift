@@ -23,7 +23,7 @@ public class IPaCollectionViewPageController:NSObject,UICollectionViewDataSource
     var currentLoadingPage:Int = -1
     var datas = [AnyObject]()
     weak var delegate:IPaCollectionViewPageControllerDelegate? = nil
-    public func dataWithIndex(index:Int) -> AnyObject? {
+    public func getData(index:Int) -> AnyObject? {
         return (index < datas.count) ? datas[index] : nil
     }
     public func reloadAllData() {

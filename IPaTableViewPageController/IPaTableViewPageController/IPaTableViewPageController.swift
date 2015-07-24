@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol IPaTableViewPageControllerDelegate {
+@objc protocol IPaTableViewPageControllerDelegate {
     func tableViewForPageController(pageController:IPaTableViewPageController) -> UITableView
     func createLoading(pageController:IPaTableViewPageController, indexPath:NSIndexPath) -> UITableViewCell
     func createDataCell(pageController:IPaTableViewPageController, indexPath:NSIndexPath) -> UITableViewCell
@@ -17,12 +17,12 @@ protocol IPaTableViewPageControllerDelegate {
     func configureLoadingCell(pageController:IPaTableViewPageController,cell:UITableViewCell,indexPath:NSIndexPath)
 }
 
-public class IPaTableViewPageController {
+public class IPaTableViewPageController : NSObject,UITableViewDataSource {
     var totalPageNum = 1
     var currentPage = 0
     var currentLoadingPage = -1
     var datas = [AnyObject]()
-    var delegate:IPaTableViewPageControllerDelegate?
+    @IBOutlet var delegate:IPaTableViewPageControllerDelegate?
     public func getData(index:Int) -> AnyObject? {
         return (datas.count <= index) ? nil : datas[index]
     }
@@ -39,16 +39,16 @@ public class IPaTableViewPageController {
         return Bool(indexPath.row == datas.count)
     }
     // MARK:Table view data source
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentPage == totalPageNum {
             return datas.count
         }
         return datas.count + 1
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell
         if let delegate = self.delegate {
             if isLoadingCell(indexPath) {
@@ -91,8 +91,10 @@ public class IPaTableViewPageController {
                 delegate.configureCell(self, cell: cell, indexPath: indexPath, data: datas[indexPath.row])
                 
             }
+            return cell
         }
-        return cell;
+        return UITableViewCell()
+
     }
     
 }
