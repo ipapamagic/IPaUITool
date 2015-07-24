@@ -2,18 +2,18 @@
 //  IPaPageControlTableViewController.h
 //  IPaPageControlTableViewController
 //
-//  Created by IPaPa on 13/9/25.
-//  Copyright (c) 2013年 IPaPa. All rights reserved.
+//  Created by IPa Chen on 2015/7/24.
+//  Copyright (c) 2015年 A Magic Studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface IPaPageControlTableViewController : UITableViewController
-{
+//! Project version number for IPaPageControlTableViewController.
+FOUNDATION_EXPORT double IPaPageControlTableViewControllerVersionNumber;
 
-}
--(id)dataWithIndex:(NSUInteger)index;
--(void)reloadAllData;
--(BOOL)isLoadingCell:(NSIndexPath*)indexPath;
+//! Project version string for IPaPageControlTableViewController.
+FOUNDATION_EXPORT const unsigned char IPaPageControlTableViewControllerVersionString[];
 
-@end
+// In this header, you should import all the public headers of your framework using statements like #import <IPaPageControlTableViewController/PublicHeader.h>
+
+
