@@ -62,7 +62,7 @@ public class IPaTableViewPageController {
                         self.currentLoadingPage = -1
                         var indexList = [NSIndexPath]()
                         let startRow = self.datas.count
-                        for idx in 0..< newDatas.count {
+                        for idx in 0..<newDatas.count {
                             indexList.append(NSIndexPath(forRow: startRow + idx, inSection: indexPath.section))
                         }
                         self.datas = self.datas + newDatas
