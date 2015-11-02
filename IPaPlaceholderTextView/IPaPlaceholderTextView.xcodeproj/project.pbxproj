@@ -101,6 +101,7 @@
 		6EB37FBB1B4FB323008687DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "A Magic Studio";
 				TargetAttributes = {
@@ -289,6 +290,7 @@
 				6EB37FDC1B4FB323008687DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

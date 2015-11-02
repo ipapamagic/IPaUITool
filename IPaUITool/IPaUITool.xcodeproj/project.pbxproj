@@ -6,38 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		6EA0A4E01A068AF200BE413A /* IPaUIToolUniversalFramework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 6EA0A4ED1A068AF200BE413A /* Build configuration list for PBXAggregateTarget "IPaUIToolUniversalFramework" */;
-			buildPhases = (
-				6EA0A4DF1A068AF200BE413A /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = IPaUIToolUniversalFramework;
-			productName = IPaUIToolUniversalFramework;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		6EA0A4E51A068AF200BE413A /* IPaUITool-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 6EA0A4E41A068AF200BE413A /* IPaUITool-Prefix.pch */; };
-		6EA0A4E71A068AF200BE413A /* IPaUITool-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EA0A4E61A068AF200BE413A /* IPaUITool-Info.plist */; };
-		6EA0A4F21A068B2700BE413A /* UIButton+IPaUITool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA0A4F01A068B2700BE413A /* UIButton+IPaUITool.h */; };
-		6EA0A4F31A068B2700BE413A /* UIButton+IPaUITool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA0A4F11A068B2700BE413A /* UIButton+IPaUITool.m */; };
+		6E5624601BC2A77800FD7AB9 /* IPaUITool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E56245F1BC2A77800FD7AB9 /* IPaUITool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E5624681BC2A79000FD7AB9 /* UIButton+IPaUITool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5624671BC2A79000FD7AB9 /* UIButton+IPaUITool.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6EA0A4DD1A068AF200BE413A /* IPaUITool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPaUITool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EA0A4E31A068AF200BE413A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EA0A4E41A068AF200BE413A /* IPaUITool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPaUITool-Prefix.pch"; sourceTree = "<group>"; };
-		6EA0A4E61A068AF200BE413A /* IPaUITool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IPaUITool-Info.plist"; sourceTree = "<group>"; };
-		6EA0A4F01A068B2700BE413A /* UIButton+IPaUITool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IPaUITool.h"; sourceTree = "<group>"; };
-		6EA0A4F11A068B2700BE413A /* UIButton+IPaUITool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IPaUITool.m"; sourceTree = "<group>"; };
+		6E56245C1BC2A77800FD7AB9 /* IPaUITool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IPaUITool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E56245F1BC2A77800FD7AB9 /* IPaUITool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPaUITool.h; sourceTree = "<group>"; };
+		6E5624611BC2A77800FD7AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E5624671BC2A79000FD7AB9 /* UIButton+IPaUITool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+IPaUITool.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6EA0A4D91A068AF200BE413A /* Frameworks */ = {
+		6E5624581BC2A77800FD7AB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,65 +29,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6EA0A4D31A068AF200BE413A = {
+		6E5624521BC2A77700FD7AB9 = {
 			isa = PBXGroup;
 			children = (
-				6EA0A4E11A068AF200BE413A /* IPaUITool */,
-				6EA0A4DE1A068AF200BE413A /* Products */,
+				6E56245E1BC2A77800FD7AB9 /* IPaUITool */,
+				6E56245D1BC2A77800FD7AB9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6EA0A4DE1A068AF200BE413A /* Products */ = {
+		6E56245D1BC2A77800FD7AB9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EA0A4DD1A068AF200BE413A /* IPaUITool.framework */,
+				6E56245C1BC2A77800FD7AB9 /* IPaUITool.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6EA0A4E11A068AF200BE413A /* IPaUITool */ = {
+		6E56245E1BC2A77800FD7AB9 /* IPaUITool */ = {
 			isa = PBXGroup;
 			children = (
-				6EA0A4E41A068AF200BE413A /* IPaUITool-Prefix.pch */,
-				6EA0A4E61A068AF200BE413A /* IPaUITool-Info.plist */,
-				6EA0A4E21A068AF200BE413A /* Supporting Files */,
-				6EA0A4F01A068B2700BE413A /* UIButton+IPaUITool.h */,
-				6EA0A4F11A068B2700BE413A /* UIButton+IPaUITool.m */,
+				6E56245F1BC2A77800FD7AB9 /* IPaUITool.h */,
+				6E5624671BC2A79000FD7AB9 /* UIButton+IPaUITool.swift */,
+				6E5624611BC2A77800FD7AB9 /* Info.plist */,
 			);
 			path = IPaUITool;
-			sourceTree = "<group>";
-		};
-		6EA0A4E21A068AF200BE413A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6EA0A4E31A068AF200BE413A /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6EA0A4DA1A068AF200BE413A /* Headers */ = {
+		6E5624591BC2A77800FD7AB9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA0A4E51A068AF200BE413A /* IPaUITool-Prefix.pch in Headers */,
-				6EA0A4F21A068B2700BE413A /* UIButton+IPaUITool.h in Headers */,
+				6E5624601BC2A77800FD7AB9 /* IPaUITool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6EA0A4DC1A068AF200BE413A /* IPaUITool */ = {
+		6E56245B1BC2A77800FD7AB9 /* IPaUITool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EA0A4EA1A068AF200BE413A /* Build configuration list for PBXNativeTarget "IPaUITool" */;
+			buildConfigurationList = 6E5624641BC2A77800FD7AB9 /* Build configuration list for PBXNativeTarget "IPaUITool" */;
 			buildPhases = (
-				6EA0A4D81A068AF200BE413A /* Sources */,
-				6EA0A4D91A068AF200BE413A /* Frameworks */,
-				6EA0A4DA1A068AF200BE413A /* Headers */,
-				6EA0A4DB1A068AF200BE413A /* Resources */,
+				6E5624571BC2A77800FD7AB9 /* Sources */,
+				6E5624581BC2A77800FD7AB9 /* Frameworks */,
+				6E5624591BC2A77800FD7AB9 /* Headers */,
+				6E56245A1BC2A77800FD7AB9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -113,84 +84,64 @@
 			);
 			name = IPaUITool;
 			productName = IPaUITool;
-			productReference = 6EA0A4DD1A068AF200BE413A /* IPaUITool.framework */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 6E56245C1BC2A77800FD7AB9 /* IPaUITool.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6EA0A4D41A068AF200BE413A /* Project object */ = {
+		6E5624531BC2A77700FD7AB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = AMagicStudio;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "A Magic Studio";
 				TargetAttributes = {
-					6EA0A4DC1A068AF200BE413A = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					6EA0A4E01A068AF200BE413A = {
-						CreatedOnToolsVersion = 6.1;
+					6E56245B1BC2A77800FD7AB9 = {
+						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 6EA0A4D71A068AF200BE413A /* Build configuration list for PBXProject "IPaUITool" */;
+			buildConfigurationList = 6E5624561BC2A77700FD7AB9 /* Build configuration list for PBXProject "IPaUITool" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 6EA0A4D31A068AF200BE413A;
-			productRefGroup = 6EA0A4DE1A068AF200BE413A /* Products */;
+			mainGroup = 6E5624521BC2A77700FD7AB9;
+			productRefGroup = 6E56245D1BC2A77800FD7AB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6EA0A4DC1A068AF200BE413A /* IPaUITool */,
-				6EA0A4E01A068AF200BE413A /* IPaUIToolUniversalFramework */,
+				6E56245B1BC2A77800FD7AB9 /* IPaUITool */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6EA0A4DB1A068AF200BE413A /* Resources */ = {
+		6E56245A1BC2A77800FD7AB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA0A4E71A068AF200BE413A /* IPaUITool-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6EA0A4DF1A068AF200BE413A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=${PRODUCT_NAME}\nFMK_VERSION=A\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Removes the binary and header from the resources folder.\nrm -r \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/Headers\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/${FMK_NAME}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		6EA0A4D81A068AF200BE413A /* Sources */ = {
+		6E5624571BC2A77800FD7AB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA0A4F31A068B2700BE413A /* UIButton+IPaUITool.m in Sources */,
+				6E5624681BC2A79000FD7AB9 /* UIButton+IPaUITool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6EA0A4E81A068AF200BE413A /* Debug */ = {
+		6E5624621BC2A77800FD7AB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,28 +158,38 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		6EA0A4E91A068AF200BE413A /* Release */ = {
+		6E5624631BC2A77800FD7AB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,97 +206,86 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		6EA0A4EB1A068AF200BE413A /* Debug */ = {
+		6E5624651BC2A77800FD7AB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IPaUITool/Info.plist;
-				INSTALL_PATH = " $(BUILT_PRODUCTS_DIR)";
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AMagicStudio.IPaUITool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		6EA0A4EC1A068AF200BE413A /* Release */ = {
+		6E5624661BC2A77800FD7AB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IPaUITool/Info.plist;
-				INSTALL_PATH = " $(BUILT_PRODUCTS_DIR)";
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AMagicStudio.IPaUITool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		6EA0A4EE1A068AF200BE413A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = IPaUITool;
-			};
-			name = Debug;
-		};
-		6EA0A4EF1A068AF200BE413A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = IPaUITool;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6EA0A4D71A068AF200BE413A /* Build configuration list for PBXProject "IPaUITool" */ = {
+		6E5624561BC2A77700FD7AB9 /* Build configuration list for PBXProject "IPaUITool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6EA0A4E81A068AF200BE413A /* Debug */,
-				6EA0A4E91A068AF200BE413A /* Release */,
+				6E5624621BC2A77800FD7AB9 /* Debug */,
+				6E5624631BC2A77800FD7AB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EA0A4EA1A068AF200BE413A /* Build configuration list for PBXNativeTarget "IPaUITool" */ = {
+		6E5624641BC2A77800FD7AB9 /* Build configuration list for PBXNativeTarget "IPaUITool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6EA0A4EB1A068AF200BE413A /* Debug */,
-				6EA0A4EC1A068AF200BE413A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		6EA0A4ED1A068AF200BE413A /* Build configuration list for PBXAggregateTarget "IPaUIToolUniversalFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6EA0A4EE1A068AF200BE413A /* Debug */,
-				6EA0A4EF1A068AF200BE413A /* Release */,
+				6E5624651BC2A77800FD7AB9 /* Debug */,
+				6E5624661BC2A77800FD7AB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6EA0A4D41A068AF200BE413A /* Project object */;
+	rootObject = 6E5624531BC2A77700FD7AB9 /* Project object */;
 }

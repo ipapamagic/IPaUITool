@@ -161,6 +161,7 @@
 		6ED83BE41B4640E100C5894E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "A Magic Studio";
 				TargetAttributes = {
@@ -406,6 +407,7 @@
 				6ED83C051B4640E100C5894E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6ED83C061B4640E100C5894E /* Build configuration list for PBXNativeTarget "IPaCollectionViewPageControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +416,7 @@
 				6ED83C081B4640E100C5894E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
