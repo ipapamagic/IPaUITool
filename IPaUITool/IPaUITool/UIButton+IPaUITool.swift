@@ -11,17 +11,23 @@ import UIKit
 extension UIButton
 {
     func centerImageUpTitleDown(space:CGFloat) {
-        let imageSize = imageView.image.size
+        guard let imageView = imageView,let image = imageView.image,titleLabel = titleLabel,let titleText = titleLabel.text else {
+            return
+        }
+        let imageSize = image.size
         titleEdgeInsets = UIEdgeInsetsMake(
-            0.0, - imageSize.width, - (imageSize.height + space), 0.0)
+            0.0, -imageSize.width, -(imageSize.height + space), 0.0)
         
         // raise the image and push it right so it appears centered
         //  above the text
-        let titleSize = titleLabel.text.sizeWithAttributes([NSFontAttributeName: titleLabel.font])
+        let titleSize = titleText.sizeWithAttributes([NSFontAttributeName: titleLabel.font])
         imageEdgeInsets = UIEdgeInsetsMake(
-        - (titleSize.height + space), 0.0, 0.0, - titleSize.width)
+        -(titleSize.height + space), 0.0, 0.0, -titleSize.width)
     }
     func imageAlignRight(space:CGFloat) {
+        guard let imageView = imageView,titleLabel = titleLabel else {
+            return
+        }
         titleEdgeInsets = UIEdgeInsetsMake(0, -imageView.frame.size.width - space, 0, imageView.frame.size.width);
         imageEdgeInsets = UIEdgeInsetsMake(0, titleLabel.frame.size.width + space, 0, -titleLabel.frame.size.width);
         
