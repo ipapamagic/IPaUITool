@@ -8,84 +8,89 @@
 
 import UIKit
 //@IBDesignable
-public class IPaPlaceholderTextView: UITextView {
+open class IPaPlaceholderTextView: UITextView {
     
-    @IBInspectable dynamic public var placeholder = ""
-    @IBInspectable dynamic var placeholderColor = UIColor.darkGrayColor()
+    @IBInspectable dynamic open var placeholder = ""
+    @IBInspectable dynamic var placeholderColor = UIColor.darkGray
     lazy var placeholderLabelLeftConstraint = NSLayoutConstraint()
-    lazy var placeholderLabelRightConstraint = NSLayoutConstraint()
+    //    lazy var placeholderLabelRightConstraint = NSLayoutConstraint()
+    lazy var placeholderLabelWidthConstraint = NSLayoutConstraint()
     lazy var placeholderLabelTopConstraint = NSLayoutConstraint()
     lazy var placeholderLabel:UILabel = {
         
-        var _placeholderLabel = UILabel(frame: CGRect(x: self.textContainerInset.left, y: self.textContainerInset.top, width: self.bounds.width - (self.textContainerInset.left + self.textContainerInset.right), height: 0))
-        _placeholderLabel.lineBreakMode = .ByWordWrapping
+        var _placeholderLabel = UILabel()
+        _placeholderLabel.lineBreakMode = .byWordWrapping
         _placeholderLabel.numberOfLines = 0
+        //_placeholderLabel.preferredMaxLayoutWidth = 200
         _placeholderLabel.font = self.font
-        _placeholderLabel.backgroundColor = UIColor.clearColor()
+        _placeholderLabel.backgroundColor = UIColor.clear
         _placeholderLabel.textColor = self.placeholderColor
         _placeholderLabel.text = self.placeholder
-        _placeholderLabel.sizeToFit()
         _placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(_placeholderLabel)
         self.textContainer.lineFragmentPadding = 0
-        self.placeholderLabelLeftConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: .Leading, multiplier: 1, constant: self.textContainerInset.left)
+        self.placeholderLabelLeftConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: .leading, multiplier: 1, constant: self.textContainerInset.left)
+        //        self.placeholderLabelRightConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .Trailing, relatedBy: NSLayoutRelation.Equal, toItem:self , attribute: .Trailing, multiplier: 1, constant: self.textContainerInset.right)
         
-        self.placeholderLabelRightConstraint = NSLayoutConstraint(item: self, attribute: .Trailing, relatedBy: NSLayoutRelation.Equal, toItem: _placeholderLabel, attribute: .Trailing, multiplier: 1, constant: self.textContainerInset.right)
+        self.placeholderLabelWidthConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: -self.textContainerInset.left-self.textContainerInset.right)
         
-        self.placeholderLabelTopConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .Top, relatedBy: NSLayoutRelation.Equal, toItem:self , attribute: .Top, multiplier: 1, constant: self.textContainerInset.top)
+        self.placeholderLabelTopConstraint = NSLayoutConstraint(item: _placeholderLabel, attribute: .top, relatedBy: NSLayoutRelation.equal, toItem:self , attribute: .top, multiplier: 1, constant: self.textContainerInset.top)
         
-        self.addConstraints([self.placeholderLabelLeftConstraint,self.placeholderLabelRightConstraint,self.placeholderLabelTopConstraint])
+        
+        self.addConstraints([self.placeholderLabelWidthConstraint,self.placeholderLabelTopConstraint,self.placeholderLabelLeftConstraint])
         
         
         
         return _placeholderLabel
     }()
     var textChangedObserver:NSObjectProtocol?
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         initialPlaceholderLabel()
     }
     func initialPlaceholderLabel () {
-        textChangedObserver = NSNotificationCenter.defaultCenter().addObserverForName(UITextViewTextDidChangeNotification, object: self, queue: nil, usingBlock: {
+        textChangedObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: self, queue: nil, using: {
             noti in
-            self.placeholderLabel.hidden = (self.text.characters.count > 0)
-            self.placeholderLabel.sizeToFit()
+            self.placeholderLabel.isHidden = (self.text.characters.count > 0)
+            self.updateConstraintsIfNeeded()
         })
-        placeholderLabel.hidden = text.characters.count > 0
-        addObserver(self, forKeyPath: "font", options: .New, context: nil)
-        addObserver(self, forKeyPath: "text", options: .New, context: nil)
-        addObserver(self, forKeyPath: "placeholder", options: .New, context: nil)
-        addObserver(self, forKeyPath: "placeholderColor", options: .New, context: nil)
-        addObserver(self, forKeyPath: "textContainerInset", options: .New, context: nil)
+        self.placeholderLabel.isHidden = text.characters.count > 0
+        addObserver(self, forKeyPath: "font", options: .new, context: nil)
+        addObserver(self, forKeyPath: "text", options: .new, context: nil)
+        addObserver(self, forKeyPath: "placeholder", options: .new, context: nil)
+        addObserver(self, forKeyPath: "placeholderColor", options: .new, context: nil)
+        addObserver(self, forKeyPath: "textContainerInset", options: .new, context: nil)
     }
     deinit {
         if let textChangedObserver = textChangedObserver {
-            NSNotificationCenter.defaultCenter().removeObserver(textChangedObserver)
+            NotificationCenter.default.removeObserver(textChangedObserver)
         }
-        removeObserver(self, forKeyPath: "font")
-        removeObserver(self, forKeyPath: "text")
-        removeObserver(self, forKeyPath: "placeholder")
-        removeObserver(self, forKeyPath: "placeholderColor")
-        removeObserver(self, forKeyPath: "textContainerInset")
+        //        removeObserver(self, forKeyPath: "font")
+        //        removeObserver(self, forKeyPath: "text")
+        //        removeObserver(self, forKeyPath: "placeholder")
+        //        removeObserver(self, forKeyPath: "placeholderColor")
+        //        removeObserver(self, forKeyPath: "textContainerInset")
     }
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let keyPath = keyPath {
             switch (keyPath) {
             case "font":
                 placeholderLabel.font = font
-                placeholderLabel.sizeToFit()
+                placeholderLabel.superview?.updateConstraintsIfNeeded()
                 
             case "text":
-                placeholderLabel.hidden = text.characters.count > 0
+                placeholderLabel.isHidden = text.characters.count > 0
             case "placeholder":
                 placeholderLabel.text = placeholder
-                placeholderLabel.sizeToFit()
+                placeholderLabel.superview?.updateConstraintsIfNeeded()
             case "placeholderColor":
                 placeholderLabel.textColor = placeholderColor
             case "textContainerInset":
                 self.placeholderLabelTopConstraint.constant = self.textContainerInset.top
                 self.placeholderLabelLeftConstraint.constant = self.textContainerInset.left
-                self.placeholderLabelRightConstraint.constant = self.textContainerInset.right
+                //                self.placeholderLabelRightConstraint.constant = self.textContainerInset.right
+                self.placeholderLabelWidthConstraint.constant =
+                    -self.textContainerInset.left-self.textContainerInset.right
                 placeholderLabel.superview?.updateConstraintsIfNeeded()
             default:
                 break
